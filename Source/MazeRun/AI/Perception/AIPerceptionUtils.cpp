@@ -37,11 +37,8 @@ void UAIPerceptionUtils::SetSightSenseMaxAge(AAIController* AIController, float 
 		return;
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("New Max Age: %f"), NewMaxAge));
 	ConfigSight->SetMaxAge(NewMaxAge);
 
 	PerceptionComponent->ConfigureSense(*ConfigSight);
 	PerceptionComponent->RequestStimuliListenerUpdate();
-
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Config Get Max Age: %f"), ConfigSight->GetMaxAge()));
 }
